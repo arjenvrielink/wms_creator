@@ -11,7 +11,7 @@ def index():
 @app.route('/dirs/')
 @app.route('/dirs/<path:folder>')
 def folder_display(folder=None):
-	os.chdir('/var/maps/')
+	os.chdir('/home/arjen/')
 	if folder == None:
 		filelist = os.walk('./').next()[1]
 		folder = './'
@@ -30,7 +30,7 @@ def create_wms():
 	error = None
 	if request.method == 'POST':
 		title = request.form['wms_title']
-		directory = '/var/maps/' + request.form['directory'] + '/'
+		directory = '/home/arjen/' + request.form['directory'] + '/'
 		try:
 			if request.form['tiled'] == 'on':
 				tiles = True
