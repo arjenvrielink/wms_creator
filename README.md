@@ -1,4 +1,4 @@
-wms_creator
+PostGinger
 ===========
 
-Flask webapp to look for tif's, ecw's or shp's in a folder than print a mapfile and a WMS url
+Web wrapper around PostGIS SQL queries
