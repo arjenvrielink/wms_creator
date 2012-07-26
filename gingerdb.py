@@ -53,7 +53,7 @@ class GingerDB(object):
             sys.exit()
 
         # setup search path
-        self.execute("SET search_path TO bron, public, werk, resultaat, output, settings")
+        self.execute("SET search_path TO public, werk, resultaat, instellingen, initialisatie")
 
     def listtables(self):
         '''list all tables in database'''
@@ -101,6 +101,7 @@ class MaatregelAfweging(object):
         SELECT POI.*, traject.eday_tot AS eday_tot, traject.trajectid AS trajectid, ST_Distance(POI.the_geom, traject.the_geom) AS afstand, (eday_tot - ( 10 * (Log(ST_Distance(POI.the_geom, traject.the_geom))) )) AS eNaarAfstand
         FROM ontvangerpunten AS POI
         RIGHT JOIN trajecten AS traject
+        
         ON ST_DWithin(POI.the_geom, traject.the_geom, %i)
         WHERE ST_Distance(POI.the_geom, traject.the_geom) > 0
         )

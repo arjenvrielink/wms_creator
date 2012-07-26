@@ -1,16 +1,38 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="row">
-    <h2>Bereken maatgevende trajecten</h2>
+    <p>Web frontend voor maatregelbepaling SQL scripts</p>
+</div>
+<div class="row">
+    <h3>1. Selecteer maatgevende trajecten voor ieder ontvangerpunt</h3>
+    <div class="span4">
     <form action="{{ url_for('maatgevendtraject') }}" method="post" class="form-inline">
-            <span class="help-inline">Definieer zoekstraal</span>
+            <span class="help-inline">Definieer</span>
             <div class="input-append">
-                <input class="input-mini" type="text" name="zoekstraal" placeholder="1500"><span class="add-on">m.</span>
+                <input class="input-mini" type="text" name="zoekstraal" placeholder="zoekstraal"><span class="add-on">m.</span>
             </div>
             <input type="submit" class="btn btn-primary" value="Bereken">
     </form>
+    </div>
+    <div class="span2">
+        {% if result %} 
+        <div class="alert alert-success">  
+            <button class="close" data-dismiss="alert">x</button>
+            <strong>Success!</strong> {{ result }}
+        </div>
+        {% endif %}
+    </div>
 </div>
 <div class="row">
-    <div class="span4 offset2">{% if result %} {{ result }}   {% endif %}</div>
+    <h3>2. Segmenteer trajecten</h3>
+    <div class="span4">
+        <p>segmenteer trajecten code</p>
+    </div>
+</div>
+<div class="row">
+    <h3>3. Maak relatietabel</h3>
+    <div class="span4">
+        <p>maak relatietabel</p>
+    </div>
 </div>
 {% endblock %}
