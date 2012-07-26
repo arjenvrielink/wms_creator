@@ -11,6 +11,7 @@ logs/
 
 # Specific files #
 ##################
+settings.py
 
 # OS generated files #
 ######################

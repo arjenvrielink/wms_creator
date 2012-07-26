@@ -1,6 +1,9 @@
+#!/usr/bin/env python
 from flask import Flask, render_template, url_for, request
-from mapfilecreation import Mapfile
 import glob, os
+
+# import postgresql stuff
+
 app = Flask(__name__)
 app.debug = True
 
